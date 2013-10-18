@@ -1,3 +1,4 @@
+"update something
 set incsearch
 set ai
 "set paste
