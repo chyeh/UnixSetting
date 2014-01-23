@@ -1,0 +1,40 @@
+version 6.0
+if &cp | set nocp | endif
+let s:cpo_save=&cpo
+set cpo&vim
+nmap gx <Plug>NetrwBrowseX
+nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cWORD>"),0)
+let &cpo=s:cpo_save
+unlet s:cpo_save
+set backspace=2
+set fileencodings=ucs-bom,utf-8,default,latin1
+set helplang=tw
+set modelines=0
+set window=0
+" vim: set ft=vim :
+
+" the followings are added by chyeh
+
+" color
+syntax on
+" line number
+set nu
+" highlight when search
+set hlsearch
+" 啟動後是使用 utf-8 編碼
+set encoding=utf-8
+" 新開的檔案預設是 utf-8 編碼
+set fileencoding=utf-8
+" 所有可能的檔案編碼
+set fileencodings=utf-8,big5,euc-jp,gbk,euc-kr,utf-bom,iso8859-1
+" 設定輸出到 terminal 的編碼
+set termencoding=utf-8
+" 將 unicode 中不確定的字符表示成雙字符，在 unicode 下才有用
+set ambiwidth=double
+" 記憶最後游標在哪一行
+if has("autocmd")
+    autocmd BufReadPost *
+    \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+    \   exe "normal g'\"" |
+    \ endif
+endif
