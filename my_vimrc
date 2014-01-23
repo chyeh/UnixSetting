@@ -15,12 +15,28 @@ set window=0
 
 " the followings are added by chyeh
 
-" color
+" 狀態列
+set laststatus=2
+set statusline=\ %F%m%r%h%w%=[%l,%3v]\ --%p%%--\ \  
+hi  statusline ctermbg=darkblue
+" 用 space*4 代替tab
+set expandtab
+set tabstop=4
+set shiftwidth=4
+" indent
+set autoindent
+set smartindent
+set cindent
+filetype plugin indent on
+" 文字上顏色
 syntax on
-" line number
+" 行數，可用set nonu關掉
 set nu
-" highlight when search
+" 搜尋時highlight
 set hlsearch
+" search
+set ignorecase
+" set incsearch 跳到下個搜尋到的點 
 " 啟動後是使用 utf-8 編碼
 set encoding=utf-8
 " 新開的檔案預設是 utf-8 編碼
